@@ -9,6 +9,7 @@ body {
     --outline: 2px solid #000;
     --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     --green: #28a745;
+    --btn-size: 90px;
 }
 
 /* Contact Header */
@@ -31,20 +32,97 @@ body {
 
 /* Navbar */
 .navbar-custom {
-    background-color: #bbc8d5;
+    background-color: #ffffff; /* Navbar background color */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.navbar-brand img {
-    max-height: 70px; /* Increased size of logo */
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navbar-nav .nav-item {
-    margin: 0 10px;
+.logo-section {
+    display: flex;
+    align-items: center;
 }
 
-.nav-link {
+.logo-image {
+    max-width: 300px; /* Adjust the size of your logo */
+    height: 100px;
+}
+
+.logo-info {
+    margin-left: 20px;
+}
+
+.body-positivity {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.veggie-image img {
+    max-width: 50px; /* Adjust the size of your vegetable bowl image */
+    height: 100px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Contact Header Styles */
+.contact-header {
+    background-color: #343a40;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.contact-header a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
     font-size: 16px;
 }
+.contact-header a:hover {
+    text-decoration: underline;
+}
+
+/* Logo Section */
+.logo-section {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Full viewport height */
+    background-image: url('icons/Barley-Salad-Bowl-1108x1536.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    text-align: center;
+}
+
+.logo-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the content */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.logo-content h1 {
+    font-size: 3rem; /* Adjust font size as needed */
+    margin-bottom: 10px;
+}
+
+.logo-content p {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    line-height: 1.6;
+}
+
 
 /* Introduction Section */
 .introduction {
@@ -151,80 +229,47 @@ body {
     }
 }
 
-/* achievement section */
+/* Achievement Section */
 .Achievements {
     padding: 2rem;
     text-align: center;
-  }
-  
-  .achievement-grid {
+}
+
+.achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
-  }
-  
-  .achievement-item {
+}
+
+.achievement-item {
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: .5rem;
     background-color: #fff;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .achievement-item img {
+}
+
+.achievement-item img {
     width: 100%;
     height: auto;
     border-radius: .5rem;
     margin-bottom: 1rem;
-  }
-  
-  .achievement-item:hover {
+}
+
+.achievement-item:hover {
     transform: scale(1.05);
     box-shadow: 1px 1px 15px 5px var(--green);
-  }
-  
-  .main-title-section-wrapper {
+}
+
+/* Main Title Section */
+.main-title-section-wrapper {
     position: relative;
     padding: 40px 0;
     text-align: center;
 }
 
-.main-title-section-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
-}
-
-.main-title-section {
-    position: relative;
-    z-index: 1;
-}
-
-.breadcrumb {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.breadcrumb a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.breadcrumb .current {
-    color: #fff;
-}
-
-.breadcrumb .fa {
-    margin: 0 5px;
-}
 .main-title-section-bg {
     position: absolute;
     top: 0;
@@ -239,21 +284,15 @@ body {
     z-index: -1; /* Ensure the background stays behind other content */
 }
 
-
-/* social media buttons */
-
-:root {
-    --btn-size: 90px;
-  }
-  
-  .social-btns {
+/* Social Media Buttons */
+.social-btns {
     height: var(--btn-size);
     margin: 20px auto;
     font-size: 0;
     text-align: center;
-  }
-  
-  .btn {
+}
+
+.btn {
     display: inline-block;
     background-color: #fff;
     width: var(--btn-size);
@@ -267,35 +306,34 @@ body {
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
     transition: all .35s;
     cursor: pointer;
-  }
-  
-  .btn:hover {
+}
+
+.btn img {
+    width: 50%; /* Adjust size as needed */
+    height: 50%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn:hover {
     transform: scale(1.1);
-  }
-  
-  .btn .fa {
-    font-size: 38px;
-    color: #fff;
-    line-height: var(--btn-size);
-  }
-  
-  .facebook {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.facebook {
     background-color: #3B5998;
-  }
-  
-  .whatsapp {
+}
+
+.whatsapp {
     background-color: #25D366;
-  }
-  
-  .instagram {
-    background-color: #C13584;
-  }
-  
-  .linkedin {
+}
+
+.linkedin {
     background-color: #0077B5;
-  }
-  
-  .youtube {
-    background-color: #FF0000;
-  }
-  
+}
+.instagram {
+    background-color: #d89dcb;
+}

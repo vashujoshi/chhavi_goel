@@ -1,0 +1,40 @@
+/* payment.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.payment-container {
+    padding: 100px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-container {
+    margin-top: -100px;
+    margin-bottom: 10px;
+}
+
+.qr-image {
+    max-width: 80%;
+    height: auto;
+}
+
+.instructions {
+    text-align: left;
+}
+
+.instructions h2 {
+    margin-bottom: 10px;
+}
+
+.instructions ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
