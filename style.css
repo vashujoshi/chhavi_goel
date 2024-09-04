@@ -1,0 +1,301 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --outline: 2px solid #000;
+    --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    --green: #28a745;
+}
+
+/* Contact Header */
+.contact-header {
+    background-color: #417f0f;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.contact-header a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: #bbc8d5;
+}
+
+.navbar-brand img {
+    max-height: 70px; /* Increased size of logo */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+/* Introduction Section */
+.introduction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.intro-img {
+    max-width: 50%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.intro-text {
+    max-width: 50%;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Success Stories Section */
+.Successstories {
+    padding: 2rem;
+    text-align: center;
+}
+
+.Successstories .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min size */
+    gap: 25px; /* Increased gap for spacing */
+    padding: 1.5rem;
+}
+
+.Successstories .box img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.Successstories .box {
+    padding: 2.5rem; /* Increased padding for larger content */
+    background: #fff;
+    border-radius: 0.5rem;
+    text-align: center;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.Successstories .box:hover {
+    box-shadow: 1px 1px 10px 4px var(--green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro-img, .intro-text {
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .introduction {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .navbar-brand img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar-brand img {
+        max-height: 40px;
+    }
+
+    .Successstories .wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for smaller screens */
+        gap: 20px;
+    }
+
+    .Successstories .box {
+        padding: 2rem; /* Adjusted padding for smaller screens */
+    }
+}
+
+/* achievement section */
+.Achievements {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .achievement-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .achievement-item img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .achievement-item:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 15px 5px var(--green);
+  }
+  
+  .main-title-section-wrapper {
+    position: relative;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.main-title-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.main-title-section {
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb .current {
+    color: #fff;
+}
+
+.breadcrumb .fa {
+    margin: 0 5px;
+}
+.main-title-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background-image: url('f.avif'); /* Add your background image URL here */
+    background-position: left center;
+    background-size: cover; /* Use cover to ensure the image covers the entire container */
+    background-repeat: repeat; /* Repeat the image if it doesn't cover the whole container */
+    background-attachment: scroll; /* Scroll with the page */
+    z-index: -1; /* Ensure the background stays behind other content */
+}
+
+
+/* social media buttons */
+
+:root {
+    --btn-size: 90px;
+  }
+  
+  .social-btns {
+    height: var(--btn-size);
+    margin: 20px auto;
+    font-size: 0;
+    text-align: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #fff;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    line-height: var(--btn-size);
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+    transition: all .35s;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .btn .fa {
+    font-size: 38px;
+    color: #fff;
+    line-height: var(--btn-size);
+  }
+  
+  .facebook {
+    background-color: #3B5998;
+  }
+  
+  .whatsapp {
+    background-color: #25D366;
+  }
+  
+  .instagram {
+    background-color: #C13584;
+  }
+  
+  .linkedin {
+    background-color: #0077B5;
+  }
+  
+  .youtube {
+    background-color: #FF0000;
+  }
+  
