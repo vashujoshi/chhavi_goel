@@ -3,54 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diet Blog</title>
+    <title>Blogs</title>
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <ul>
-            <li><a href="#diabetes">Diabetes</a></li>
-            <li><a href="#pcos">PCOS</a></li>
-            <li><a href="#cholesterol">Cholesterol</a></li>
-            <li><a href="#map">Map</a></li>
-        </ul>
-    </nav>
+    <h1><center>Blogs</center></h1>
 
     <!-- Blog Section -->
-    <header>
-        <h1>Cool Articles</h1>
-    </header>
-    <div class="band">
-        <div class="item-1">
-            <a href="#diabetes" class="card">
-                <div class="thumb" style="background-image: url('diabetes.jpg');"></div>
-                <article>
-                    <h1>Managing Diabetes with Diet</h1>
-                    <span>By Author Name</span>
-                </article>
-            </a>
+    <div class="blog-container">
+        <!-- Blog Card 1 -->
+        <div class="blog-card">
+            <img src="pcos.jpg" alt="Understanding PCOS" />
+            <h2>Understanding PCOS: Causes, Symptoms, and Treatments</h2>
+            <p>Polycystic Ovary Syndrome (PCOS) is a hormonal disorder common among women of reproductive age...</p>
+            <button class="read-more" data-id="1">Read More</button>
         </div>
-        <div class="item-2">
-            <a href="pcos-full.html" class="card">
-                <div class="thumb" style="background-image: url('pcos.jpg');"></div>
-                <article>
-                    <h1>PCOS and Nutritional Interventions</h1>
-                    <span>By Author Name</span>
-                    <p>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder that impacts people during their reproductive years...</p>
-                    <a href="pcos-full.html" class="read-more">Read More</a>
-                </article>
-            </a>
+        <!-- Blog Card 2 -->
+        <div class="blog-card">
+            <img src="icons/healthy-heart.jpeg" alt="Top 10 Foods for a Healthy Heart" />
+            <h2>Top 10 Foods for a Healthy Heart</h2>
+            <p>A healthy diet is key to maintaining a strong heart. In this article, we'll explore the top 10 foods that promote cardiovascular health...</p>
+            <button class="read-more" data-id="2">Read More</button>
         </div>
-        <div class="item-3">
-            <a href="#cholesterol" class="card">
-                <div class="thumb" style="background-image: url('cholesterol.jpg');"></div>
-                <article>
-                    <h1>Dietary Tips for Lowering Cholesterol</h1>
-                    <span>By Author Name</span>
-                </article>
-            </a>
+        <!-- Blog Card 3 -->
+        <div class="blog-card">
+            <img src="diabetes.jpg" alt="Managing Diabetes with Diet and Exercise" />
+            <h2>Managing Diabetes with Diet and Exercise</h2>
+            <p>Diabetes management involves a combination of medication, diet, and exercise...</p>
+            <button class="read-more" data-id="3">Read More</button>
+        </div>
+        <div class="blog-card">
+            <img src="diabetes.jpg" alt="Managing Diabetes with Diet and Exercise" />
+            <h2>Managing Diabetes with Diet and Exercise</h2>
+            <p>Diabetes management involves a combination of medication, diet, and exercise...</p>
+            <button class="read-more" data-id="3">Read More</button>
+        </div>
+        <div class="blog-card">
+            <img src="diabetes.jpg" alt="Managing Diabetes with Diet and Exercise" />
+            <h2>Managing Diabetes with Diet and Exercise</h2>
+            <p>Diabetes management involves a combination of medication, diet, and exercise...</p>
+            <button class="read-more" data-id="3">Read More</button>
+        </div>
+        <div class="blog-card">
+            <img src="diabetes.jpg" alt="Managing Diabetes with Diet and Exercise" />
+            <h2>Managing Diabetes with Diet and Exercise</h2>
+            <p>Diabetes management involves a combination of medication, diet, and exercise...</p>
+            <button class="read-more" data-id="3">Read More</button>
+        </div>
+        <div class="blog-card">
+            <img src="diabetes.jpg" alt="Managing Diabetes with Diet and Exercise" />
+            <h2>Managing Diabetes with Diet and Exercise</h2>
+            <p>Diabetes management involves a combination of medication, diet, and exercise...</p>
+            <button class="read-more" data-id="3">Read More</button>
+        </div>
+
+        <!-- Add more blog cards as needed -->
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        <a href="#">Previous</a>
+        <a href="#">Next</a>
+    </div>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="blog-content"></div>
         </div>
     </div>
+
+    <script>
+        // Get modal element and close button
+        const modal = document.getElementById('blogModal');
+        const closeModal = document.querySelector('.close');
+
+        // Function to open the modal and display blog content
+        function openModal(blogId) {
+            fetch(`blogs/${blogId}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    let blogHtml = `<h1>${data.title}</h1>`;
+                    blogHtml += `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">`;
+                    blogHtml += data.content.map(item => {
+                        if (item.type === 'heading') {
+                            return `<h2>${item.text}</h2>`;
+                        } else if (item.type === 'paragraph') {
+                            return `<p>${item.text}</p>`;
+                        } else if (item.type === 'list') {
+                            return `<ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+                        }
+                    }).join('');
+                    
+                    document.getElementById('blog-content').innerHTML = blogHtml;
+                    modal.style.display = "block";
+                    document.body.style.overflow = 'hidden'; // Disable scroll when modal is open
+                })
+                .catch(error => {
+                    console.error('Error fetching blog data:', error);
+                });
+        }
+
+        // Close the modal when the user clicks on <span> (x)
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = 'auto'; // Enable scroll when modal is closed
+        }
+
+        // Close the modal when the user clicks outside the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = 'auto'; // Enable scroll when modal is closed
+            }
+        }
+
+        // Add event listener to "Read More" buttons
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', function() {
+                const blogId = this.getAttribute('data-id');
+                openModal(blogId);
+            });
+        });
+    </script>
 </body>
 </html>
