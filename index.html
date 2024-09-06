@@ -4,28 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css" />
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@9/swiper-bundle.min.css"
-/>
+    
+    <!-- Preload the logo image to improve LCP -->
+    <link rel="preload" href="icons/logo1.jpg" as="image">
+    
+    <!-- Inline critical CSS for above-the-fold content -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .logo-image {
+          width: 100px;
+          height: auto;
+      }
+      .navbar-custom {
+          background-color: #fff;
+          padding: 20px;
+      }
+      .contact-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          background-color: #f1f1f1;
+      }
+      .contact-header a {
+          text-decoration: none;
+          color: #333;
+          padding: 10px;
+      }
+      .dropdown-content {
+          display: none;
+      }
+    </style>
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Load non-critical styles asynchronously -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
 
-<!-- Other head elements -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome CSS (deferred) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+
+    <!-- Async loading of third-party scripts -->
+    <script async src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 
 </head>
 <body>
     
-    <img src="logo.jpg" alt="Logo" class="logo-image" />
+    <!-- Optimized image with srcset for responsiveness and lazy loading -->
+    <img 
+      src="icons/logo1.jpg" 
+      srcset="icons/logo1-small.jpg 500w, icons/logo1-medium.jpg 1000w, icons/logo1-large.jpg 1500w"
+      sizes="(max-width: 600px) 100vw, 50vw"
+      alt="Logo" 
+      class="logo-image" 
+      loading="lazy" 
+    />
 
     <!-- Contact Header -->
-  
     <div class="contact-header">
-
         <a href="#">Home</a>
         <a href="achievements.html">Achievements</a>  
         <a href="blog.html">Blog</a>
@@ -33,7 +72,6 @@
         <div class="dropdown">
             <a href="#" class="dropdown-btn">Services</a>
             <div class="dropdown-content">
-                <!-- <a href="medical-nutrition-programs.html">Medical Nutrition Programs</a> -->
                 <a href="hypertension-diet.html">Hypertension Diet</a>
                 <a href="diabetes-diet.html">Diabetes Diet</a>
                 <a href="pcos-diet.html">PCOS Diet</a>
@@ -45,27 +83,17 @@
         </div>
         <a href="#Successstories">Success Stories</a>
         <a href="testimonial.html">Testimonials</a>
-        <a href="membership.html">Membership</a>
+        <a href="membership.html">Plans and prices</a>
         <a href="contactus.html">Contact us</a>
-
-         <!-- Services Dropdown -->
-      
-    </div>
-
-
     </div>
 
     <!-- Navbar -->
-   
-
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <!-- Logo Section -->
             <section class="logo-section">
                 <div class="logo-content">
-                    <a href="#" class="navbar-brand">
-                       
-                    </a>
+                    <a href="#" class="navbar-brand"></a>
                     <div class="text-overlay">
                         <h1>Empowering You with Nutrition</h1>
                         <p>Transform your health and well-being with personalized diet plans and expert guidance.</p>
@@ -74,106 +102,109 @@
             </section>
         </div>
     </nav>
-    <section>
-    </section>
+
+
     <!-- social media buttons -->
-    <div class="social-btns">
-        <a href="https://www.facebook.com/get.fit.with.chhavi?mibextid=ZbWKwL" class="btn facebook">
-            <img src="icons/2023_Facebook_icon.svg.webp" alt="Facebook">
-        </a>
-        <a href="https://wa.me/918826386125" class="btn whatsapp">
-            <img src="icons/whatsapp.png" alt="WhatsApp">
-        </a>
-        <a href="https://www.linkedin.com/in/dr-chhavi-goel-phd-cde-cpt-46258925/?profileId=ACoAAAU_E0oBz71Eyr_8amNlDuNdsakqxlxxWP4" class="btn linkedin">
-            <img src="icons/linkedinmain.jpeg" alt="LinkedIn">
-        </a>
-        <a href="https://www.instagram.com/dietitianchhavigoel/?hl=en" class="btn instagram">
-            <img src="icons/pngtree-three-dimensional-instagram-icon-png-image_9015419.png" alt="Instagram">
-        </a>
+  <!-- Social Media Buttons -->
+<div class="social-btns">
+    <a href="https://www.facebook.com/get.fit.with.chhavi?mibextid=ZbWKwL" class="btn facebook" target="_blank" rel="noopener noreferrer">
+        <img src="icons/2023_Facebook_icon.svg.webp" alt="Facebook">
+    </a>
+    <a href="https://wa.me/918826386125" class="btn whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="icons/whatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.linkedin.com/in/dr-chhavi-goel-phd-cde-cpt-46258925/?profileId=ACoAAAU_E0oBz71Eyr_8amNlDuNdsakqxlxxWP4" class="btn linkedin" target="_blank" rel="noopener noreferrer">
+        <img src="icons/linkedinmain.jpeg" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/dietitianchhavigoel/?hl=en" class="btn instagram" target="_blank" rel="noopener noreferrer">
+        <img src="icons/pngtree-three-dimensional-instagram-icon-png-image_9015419.png" alt="Instagram">
+    </a>
+    <a href="https://www.youtube.com/@dietitianchhavigoel" class="btn youtube" target="_blank" rel="noopener noreferrer">
+        <img src="icons/yt.png" alt="youtube">
+    </a>
 
-        <!-- add more buttons -->
-    </div>
     
+</div>
 
-    <!-- Main Content -->
-    <div class="container introduction">
-        <img src="chavi.jpg" alt="Introduction Image" class="intro-img" />
-        <div class="intro-text">
-          <h1>Dr. Chhavi Goel</h1>
-          <h2>PhD.(FnN), CDE, CPT, Health Coach</h2>
-          <p>
-            I am a woman, a dedicated dietitian, a daughter, a sister, a
-            daughter-in-law, a wife, and a mother. Yet, my passion for my
-            profession burns just as brightly. Being a national nutrition award
-            recipient, I bring over 17 years of valuable experience to the table.
-            I take immense joy in counseling individuals, and enlightening them
-            about trustworthy nutrition. Improving the quality of life for every
-            person I encounter feels like my life&apos;s mission.
-          </p>
-          <p>
-            I am a devoted and national nutrition award winner dietitian, driven
-            by an enduring passion for my profession bearing over 17 years of
-            invaluable expertise. Guiding individuals towards reliable nutrition
-            brings me immense joy, and I see it as my life&apos;s mission to enhance
-            their quality of life.
-          </p>
-          <p>
-            Throughout my journey, I've been honored to address prestigious
-            national and international platforms, including IOCL, Bharat
-            Petroleum, Income Tax Bar Association, Supreme Court of India, Delhi
-            Police Association, PwC, Dell India, and Grey Orange. Organizing
-            awareness camps in collaboration with companies like GSK, Sanofi, Eli
-            Lilly, and Apollo Hospitals has been a privilege. In recent years, my
-            focus has shifted towards empowering individuals with diabetes,
-            leading to my roles as a Diabetes Educator and Insulin Pump Trainer
-            with Curefit, Sugarfit, and Fitterfly.
-          </p>
-          <p>
-            Additionally, I have a keen interest in delivering lectures within the
-            hospitality industry. I&apos;ve had the privilege of being part of
-            externals under the Ministry of Tourism, further fueling my enthusiasm
-            for this field.
-          </p>
+    
+<!-- Main Content -->
+<div class="container introduction">
+    <img src="chavi.jpg" alt="Introduction Image" class="intro-img" loading="lazy" />
+    <div class="intro-text">
+      <h1>Dr. Chhavi Goel</h1>
+      <h2>PhD.(FnN), CDE, CPT, Health Coach</h2>
+      <p>
+        I am a woman, a dedicated dietitian, a daughter, a sister, a
+        daughter-in-law, a wife, and a mother. Yet, my passion for my
+        profession burns just as brightly. Being a national nutrition award
+        recipient, I bring over 17 years of valuable experience to the table.
+        I take immense joy in counseling individuals, and enlightening them
+        about trustworthy nutrition. Improving the quality of life for every
+        person I encounter feels like my life&apos;s mission.
+      </p>
+      <p>
+        I am a devoted and national nutrition award winner dietitian, driven
+        by an enduring passion for my profession bearing over 17 years of
+        invaluable expertise. Guiding individuals towards reliable nutrition
+        brings me immense joy, and I see it as my life&apos;s mission to enhance
+        their quality of life.
+      </p>
+      <p>
+        Throughout my journey, I've been honored to address prestigious
+        national and international platforms, including IOCL, Bharat
+        Petroleum, Income Tax Bar Association, Supreme Court of India, Delhi
+        Police Association, PwC, Dell India, and Grey Orange. Organizing
+        awareness camps in collaboration with companies like GSK, Sanofi, Eli
+        Lilly, and Apollo Hospitals has been a privilege. In recent years, my
+        focus has shifted towards empowering individuals with diabetes,
+        leading to my roles as a Diabetes Educator and Insulin Pump Trainer
+        with Curefit, Sugarfit, and Fitterfly.
+      </p>
+      <p>
+        Additionally, I have a keen interest in delivering lectures within the
+        hospitality industry. I&apos;ve had the privilege of being part of
+        externals under the Ministry of Tourism, further fueling my enthusiasm
+        for this field.
+      </p>
+    </div>
+</div>
+
+<!-- Success Stories Section -->
+<section class="Successstories" id="Successstories">
+    <h1>Our Success Stories</h1>
+    <div class="wrapper"> 
+        <div class="box">
+            <img src="successstories/hottie.jpg" alt="Success Story 1" loading="lazy">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <img src="successstories/cuttie.jpg" alt="Success Story 2" loading="lazy">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <img src="successstories/beard.jpg" alt="Success Story 3" loading="lazy">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <img src="successstories/gunjan.jpg" alt="Success Story 4" loading="lazy">
+            <p>4</p>
+        </div>
+        <div class="box">
+            <img src="successstories/mann.jpg" alt="Success Story 5" loading="lazy">
+            <p>5</p>
+        </div>
+        <div class="box">
+            <img src="successstories/fatty.jpg" alt="Success Story 6" loading="lazy">
+            <p>6</p>
         </div>
     </div>
+</section>
 
-    <!-- Success Stories Section -->
-    <section class="Successstories" id="Successstories">
-        <h1>Our Success Stories</h1>
-        <div class="wrapper"> 
-            <div class="box">
-                <img src="successstories/hottie.jpg" alt="Success Story 1">
-                <p> 1</p>
-            </div>
-            <div class="box">
-                <img src="successstories/cuttie.jpg" alt="Success Story 2">
-                <p> 2</p>
-            </div>
-            <div class="box">
-                <img src="successstories/beard.jpg" alt="Success Story 3">
-                <p> 3</p>
-            </div>
-            <div class="box">
-                <img src="successstories/gunjan.jpg" alt="Success Story 4">
-                <p> 4</p>
-            </div>
-            <div class="box">
-                <img src="successstories/mann.jpg" alt="Success Story 5">
-                <p> 5</p>
-            </div>
-            <div class="box">
-                <img src="successstories/fatty.jpg" alt="Success Story 5">
-                <p> 6</p>
-            </div>
-        </div>
-    </section>
+<!-- Lazy loading of scripts -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script defer src="scripts.js"></script>
 
-
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="scripts.js"></script>
 </body>
 </html>

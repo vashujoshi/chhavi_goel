@@ -30,6 +30,13 @@ body {
     text-decoration: underline;
 }
 
+@font-face {
+    font-family: 'YourFont';
+    src: url('yourfont.woff2') format('woff2');
+    font-display: swap;
+  }
+  
+
 /* Navbar */
 .navbar-custom {
     background-color: #ffffff; /* Navbar background color */
@@ -252,7 +259,7 @@ body {
 }
 
 .achievement-item img {
-    width: 100%;
+    width: 200%;
     height: auto;
     border-radius: .5rem;
     margin-bottom: 1rem;
@@ -336,6 +343,9 @@ body {
 }
 .instagram {
     background-color: #d89dcb;
+}
+.youtube {
+    background-color: #93233d;
 }
 
 /* Style for the dropdown */
