@@ -1,6 +1,263 @@
 {
-    "id": 2,
-    "title": "Blog Title 2",
-    "image": "icons/healthy-heart.jpeg",
-    "content": "Full content for blog 2..."
+      "id": 2,
+      "image": "icons/healthy-heart.jpeg",
+      "title": "Top 10 Foods for a Healthy Heart: Boost Cardiovascular Health Naturally",
+      "meta_description": "Discover the top 10 heart-healthy foods to improve cardiovascular health. Learn how a balanced diet can reduce heart disease risk and promote a healthy heart.",
+      "keywords": ["foods for a healthy heart", "heart-healthy foods", "diet for heart health", "how to improve heart health", "healthy diet for heart", "cardiovascular health", "reduce heart disease risk"],
+      "content": [
+        {
+          "type": "header",
+          "level": 1,
+          "text": "Top 10 Foods for a Healthy Heart"
+        },
+        {
+          "type": "paragraph",
+          "text": "Maintaining a healthy heart starts with what you put on your plate. A well-balanced diet can improve cardiovascular health, reduce the risk of heart disease, and help you live a longer, healthier life. Incorporating heart-healthy foods into your daily meals can significantly impact your overall well-being. Here's a list of the top 10 foods to boost your heart health."
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "1. Fatty Fish: Rich in Omega-3 Fatty Acids"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fatty fish like salmon, mackerel, and sardines are excellent sources of omega-3 fatty acids, which are known to reduce inflammation, lower blood pressure, and decrease the risk of heart disease."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Best Choices:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Salmon",
+            "Mackerel",
+            "Sardines",
+            "Tuna"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "2. Leafy Greens: High in Fiber and Antioxidants"
+        },
+        {
+          "type": "paragraph",
+          "text": "Leafy green vegetables such as spinach, kale, and Swiss chard are packed with fiber, vitamins, and minerals that promote heart health by lowering blood pressure and reducing oxidative stress."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Top Picks:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Spinach",
+            "Kale",
+            "Swiss chard",
+            "Collard greens"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "3. Whole Grains: Rich in Fiber"
+        },
+        {
+          "type": "paragraph",
+          "text": "Whole grains like oats, quinoa, and brown rice are loaded with fiber, which can help lower cholesterol levels and promote a healthy heart. They also provide long-lasting energy, making them a great choice for a heart-friendly diet."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Top Whole Grains:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Oats",
+            "Quinoa",
+            "Brown rice",
+            "Whole wheat"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "4. Berries: Packed with Antioxidants"
+        },
+        {
+          "type": "paragraph",
+          "text": "Berries such as blueberries, strawberries, and raspberries are full of antioxidants, particularly anthocyanins, which help reduce inflammation and oxidative stress, protecting the heart from damage."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Best Options:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Blueberries",
+            "Strawberries",
+            "Raspberries",
+            "Blackberries"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "5. Nuts: Heart-Healthy Fats"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nuts, especially almonds and walnuts, are rich in heart-healthy fats, fiber, and omega-3s, which help lower bad cholesterol (LDL) and improve overall heart health."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Best Nuts for Heart Health:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Almonds",
+            "Walnuts",
+            "Pistachios",
+            "Cashews"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "6. Avocados: Loaded with Healthy Fats"
+        },
+        {
+          "type": "paragraph",
+          "text": "Avocados are an excellent source of monounsaturated fats, which are known to reduce bad cholesterol (LDL) while increasing good cholesterol (HDL), making them a must for heart health."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "How to Include Avocados:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Add to salads",
+            "Spread on toast",
+            "Use in smoothies"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "7. Dark Chocolate: Rich in Flavonoids"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dark chocolate contains flavonoids, which are antioxidants that help reduce blood pressure and improve blood flow to the heart. Opt for chocolate with at least 70% cocoa for maximum benefits."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "How to Enjoy Dark Chocolate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Snack on a small piece after meals",
+            "Use in healthy desserts"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "8. Olive Oil: Heart-Healthy Monounsaturated Fats"
+        },
+        {
+          "type": "paragraph",
+          "text": "Olive oil is rich in monounsaturated fats and antioxidants, which can reduce inflammation and lower the risk of heart disease."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Use Olive Oil For:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Cooking",
+            "Salad dressings",
+            "Drizzling on vegetables"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "9. Legumes: Fiber and Protein for Heart Health"
+        },
+        {
+          "type": "paragraph",
+          "text": "Legumes like beans, lentils, and chickpeas are high in fiber and plant-based protein, which can help lower cholesterol and support heart health."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "Top Choices:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Black beans",
+            "Chickpeas",
+            "Lentils",
+            "Kidney beans"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "10. Tomatoes: Rich in Lycopene"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tomatoes are an excellent source of lycopene, an antioxidant that helps reduce oxidative stress and lower the risk of heart disease."
+        },
+        {
+          "type": "header",
+          "level": 3,
+          "text": "How to Enjoy Tomatoes:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Fresh in salads",
+            "Cooked in sauces",
+            "Blended into smoothies"
+          ]
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "type": "paragraph",
+          "text": "Incorporating these heart-healthy foods into your daily diet is a natural and effective way to improve cardiovascular health. A balanced diet rich in nutrients, paired with regular exercise and a healthy lifestyle, is key to reducing the risk of heart disease and promoting a healthy heart."
+        },
+        {
+          "type": "header",
+          "level": 2,
+          "text": "Call to Action"
+        },
+        {
+          "type": "paragraph",
+          "text": "Want to learn more about how a heart-healthy diet can benefit you? Contact us today for personalized nutrition advice and start your journey to better heart health!"
+        }
+      ]
+    
+    
   }
