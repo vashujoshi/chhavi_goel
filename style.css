@@ -337,3 +337,184 @@ body {
 .instagram {
     background-color: #d89dcb;
 }
+
+/* Style for the dropdown */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-btn {
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive text */
+h1, h2, h3, p {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+/* Background section responsive */
+.background-section {
+    background-size: cover;
+    background-position: center;
+    padding: 30px 15px;
+    color: white;
+    text-align: center;
+}
+
+/* Content section */
+.content-section {
+    padding: 20px 15px;
+}
+
+/* Make lists look good on small screens */
+ul {
+    padding: 0;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Responsive container */
+.container {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Sign-up box responsiveness */
+.signup-box {
+    background: #e1e1e1;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-box h3 {
+    font-size: 1.5rem;
+}
+
+.signup-box p {
+    font-size: 1rem;
+}
+
+/* Button responsiveness */
+.signup-box a.signup-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Mobile first approach */
+@media (max-width: 768px) {
+    .background-section {
+        padding: 20px 10px;
+        font-size: 0.9rem;
+    }
+
+    .content-section {
+        padding: 20px 10px;
+    }
+
+    .signup-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .signup-box p {
+        font-size: 0.9rem;
+    }
+
+    .signup-box a.signup-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .background-section {
+        font-size: 0.8rem;
+    }
+
+    .signup-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .signup-box a.signup-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
