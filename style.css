@@ -11,19 +11,27 @@ body {
     --green: #28a745;
     --btn-size: 90px;
 }
+body {
+    font-family: Arial, sans-serif;
+}
 
+.dropdown-content {
+    display: none;
+}
 /* Contact Header */
+
+
 .contact-header {
-    background-color: #417f0f;
-    color: white;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
-    text-align: center;
+    background-color: #f1f1f1;
 }
 
 .contact-header a {
-    color: white;
     text-decoration: none;
-    margin: 0 15px;
+    color: #333;
+    padding: 10px;
 }
 
 .contact-header a:hover {
@@ -38,12 +46,11 @@ body {
   
 
 /* Navbar */
-.navbar-custom {
-    background-color: #ffffff; /* Navbar background color */
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
+.navbar-custom {
+    background-color: #fff;
+    padding: 20px;
+}
 .container-fluid {
     display: flex;
     align-items: center;
@@ -56,9 +63,11 @@ body {
 }
 
 .logo-image {
-    max-width: 300px; /* Adjust the size of your logo */
-    height: 100px;
+    width: 150px; /* Adjust to desired size */
+    height: 100px;  /* Keeps the aspect ratio intact */
+    max-width: 200%; /* Ensures responsiveness */
 }
+
 
 .logo-info {
     margin-left: 20px;

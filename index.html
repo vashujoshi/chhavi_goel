@@ -6,37 +6,11 @@
     <title>Home Page</title>
     
     <!-- Preload the logo image to improve LCP -->
-    <link rel="preload" href="icons/logo1.jpg" as="image">
+    <!-- <link rel="preload" href="icons/logo1.png" as="image"> -->
+<img src="icons/newlogo3.jpeg" class="logo-image">
     
     <!-- Inline critical CSS for above-the-fold content -->
-    <style>
-      /* Critical CSS for above-the-fold content */
-      body {
-          font-family: Arial, sans-serif;
-      }
-      .logo-image {
-          width: 100px;
-          height: auto;
-      }
-      .navbar-custom {
-          background-color: #fff;
-          padding: 20px;
-      }
-      .contact-header {
-          display: flex;
-          justify-content: space-between;
-          padding: 10px;
-          background-color: #f1f1f1;
-      }
-      .contact-header a {
-          text-decoration: none;
-          color: #333;
-          padding: 10px;
-      }
-      .dropdown-content {
-          display: none;
-      }
-    </style>
+    <!--  -->
 
     <!-- Load non-critical styles asynchronously -->
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
@@ -54,14 +28,14 @@
 <body>
     
     <!-- Optimized image with srcset for responsiveness and lazy loading -->
-    <img 
-      src="icons/logo1.jpg" 
-      srcset="icons/logo1-small.jpg 500w, icons/logo1-medium.jpg 1000w, icons/logo1-large.jpg 1500w"
-      sizes="(max-width: 600px) 100vw, 50vw"
-      alt="Logo" 
-      class="logo-image" 
-      loading="lazy" 
-    />
+    <!-- <img src="icons/logo1.png" alt="Logo" class="logo-image" loading="lazy"
+    srcset="icons/logo1-small.jpg 500w, icons/logo1-medium.jpg 1000w, icons/logo1-large.jpg 1500w"
+    sizes="(max-width: 600px) 100vw, 50vw"
+    alt="Logo" 
+    class="logo-image" 
+    loading="lazy" 
+    /> -->
+ 
 
     <!-- Contact Header -->
     <div class="contact-header">
