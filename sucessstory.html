@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories</title>
+    <link rel="stylesheet" href="sucess.css">
+</head>
+<body>
+    <section class="success-stories" id="success-stories">
+        <h1>Our Success Stories</h1>
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide">
+                    <img src="successstories/hottie.jpg" alt="Success Story 1" loading="lazy">
+                    <p>1</p>
+                </div>
+                <div class="slide">
+                    <img src="successstories/cuttie.jpg" alt="Success Story 2" loading="lazy">
+                    <p>2</p>
+                </div>
+                <div class="slide">
+                    <img src="successstories/beard.jpg" alt="Success Story 3" loading="lazy">
+                    <p>3</p>
+                </div>
+                <div class="slide">
+                    <img src="successstories/gunjan.jpg" alt="Success Story 4" loading="lazy">
+                    <p>4</p>
+                </div>
+                <div class="slide">
+                    <img src="successstories/mann.jpg" alt="Success Story 5" loading="lazy">
+                    <p>5</p>
+                </div>
+                <div class="slide">
+                    <img src="successstories/fatty.jpg" alt="Success Story 6" loading="lazy">
+                    <p>6</p>
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+    
+    <script>
+        let slideIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (index >= slides.length) slideIndex = 0;
+    if (index < 0) slideIndex = slides.length - 1;
+
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${-100 * slideIndex}%)`;
+    });
+}
+
+function changeSlide(n) {
+    showSlide(slideIndex += n);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(slideIndex);
+});
+
+    </script>
+</body>
+</html>
