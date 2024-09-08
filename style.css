@@ -55,6 +55,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo-section {
@@ -140,6 +141,74 @@ body {
 }
 
 
+/* CSS Styling blog section*/
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog-card {
+    width: 30%;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.blog-card img {
+    width: 100%;
+    height: auto;
+}
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+}
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    cursor: pointer;
+}
+/* Additional styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h2 {
+    margin-top: 0;
+}
+
+
+
 /* Introduction Section */
 .introduction {
     display: flex;
@@ -210,6 +279,13 @@ body {
         margin: 0;
         text-align: center;
     }
+    .navbar-nav {
+        display: none; /* Hide navbar links initially */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #fff; /* Optionally, give it a background */
+        width: 100%; /* Ensure it takes up the whole screen */
+    }
+
 
     .introduction {
         flex-direction: column;
@@ -233,6 +309,18 @@ body {
 
     .navbar-brand img {
         max-height: 40px;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Display hamburger icon */
+        cursor: pointer;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+    }
+    
+    .navbar-nav.active {
+        display: flex; /* Show navbar links when menu is active */
     }
 
     .Successstories .wrapper {
