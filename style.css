@@ -64,8 +64,8 @@ body {
 }
 
 .logo-image {
-    width: 150px; /* Adjust to desired size */
-    height: 100px;  /* Keeps the aspect ratio intact */
+    width: 200px; /* Adjust to desired size */
+    height: 150px;  /* Keeps the aspect ratio intact */
     max-width: 200%; /* Ensures responsiveness */
 }
 
@@ -73,6 +73,49 @@ body {
 .logo-info {
     margin-left: 20px;
 }
+
+/* Flexbox container for the logo and social media */
+.header-section {
+    padding: 20px;
+    background-color: #f8f8f8; /* Optional background for the section */
+}
+
+.logo-and-social {
+    display: flex;
+    align-items: center; /* Align logo and social icons vertically */
+    justify-content: space-between; /* Space between logo and social buttons */
+}
+
+/* Logo styling */
+.logo-image {
+    max-width: 150px; /* Adjust as needed */
+}
+
+/* Social buttons styling */
+.social-buttons {
+    display: flex;
+    gap: 150px; /* Adds space between social media buttons */
+}
+
+.social-buttons a {
+    display: inline-block;
+}
+
+.social-buttons img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    border-radius: 50%; /* Optional to make them circular */
+}
+
+/* Optional: Style individual buttons if needed */
+.facebook img { background-color: #3b5998; }
+.whatsapp img { background-color: #25D366; }
+.linkedin img { background-color: #0077b5; }
+.instagram img { background-color: #C13584; }
+.youtube img { background-color: #FF0000; }
+
+
+
 
 .body-positivity {
     font-size: 16px;
