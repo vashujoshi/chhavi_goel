@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appealing Number Counter</title>
+    <link rel="stylesheet" href="counter.css">
+</head>
+<body>
+
+<div class="counter-widget">
+    <div class="counter-item" style="--clr: #FF6F61;">
+        <span class="icon">❤️</span>
+        <h3>Clients</h3>
+        <span class="counter" data-target="1200">0</span>
+        <p>Satisfied Clients by Results</p>
+    </div>
+    <div class="counter-item" style="--clr: #6BAED6;">
+        <span class="icon">⏰</span>
+        <h3>Seminar Hours</h3>
+        <span class="counter" data-target="1000">0</span>
+        <p>Hours of seminars on healthy diets</p>
+    </div>
+    <div class="counter-item" style="--clr: #7DCEA0;">
+        <span class="icon">📖</span>
+        <h3>Recipes</h3>
+        <span class="counter" data-target="200">0</span>
+        <p>Recipes published</p>
+    </div>
+    <div class="counter-item" style="--clr: #F4D03F;">
+        <span class="icon">😄</span>
+        <h3>Satisfaction Rate</h3>
+        <span class="counter" data-target="98">0</span>
+        <p>Client Satisfaction Rate</p>
+    </div>
+    <div class="counter-item" style="--clr: #F39C12;">
+        <span class="icon">⭐</span>
+        <h3>Top Dietitian</h3>
+        <span class="counter" data-target="100">0</span>
+        <p>One of the highest-rated dietitians</p>
+    </div>
+</div>
+<script>
+
+const counters = document.querySelectorAll('.counter');
+const speed = 100; // Speed of the counting
+
+// Function to animate the counting
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target'); // Get the target value
+    const increment = target / speed; // Calculate the increment step
+    let currentValue = 0;
+    
+    const updateCounter = () => {
+        currentValue += increment;
+        if (currentValue < target) {
+            counter.textContent = Math.ceil(currentValue);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target;
+        }
+    };
+    
+    updateCounter();
+};
+
+// Intersection Observer to start counting when in view
+const observerOptions = {
+    threshold: 0.2 // When 20% of the counter is in view
+};
+
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target); // Start counting
+            observer.unobserve(entry.target); // Stop observing once animation starts
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// Observe each counter
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+</script>
+
+</body>
+</html>

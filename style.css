@@ -90,7 +90,6 @@ body {
 .logo-image {
     max-width: 150px; /* Adjust as needed */
 }
-
 /* Social buttons styling */
 .social-buttons {
     display: flex;
@@ -114,8 +113,34 @@ body {
 .instagram img { background-color: #C13584; }
 .youtube img { background-color: #FF0000; }
 
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .social-buttons {
+        gap: 50px; /* Reduce gap for smaller screens */
+        justify-content: center;
+    }
 
+    .social-buttons img {
+        width: 35px; /* Reduce icon size for smaller screens */
+        height: 35px;
+    }
+}
 
+@media screen and (max-width: 480px) {
+    .social-buttons {
+        gap: 20px; /* Further reduce gap for very small screens */
+        flex-wrap: wrap; /* Ensure buttons wrap if they overflow */
+        justify-content: center;
+    }
+
+    .social-buttons img {
+        width: 30px; /* Smaller icon size for mobile */
+        height: 30px;
+    }
+}
+ /* counter */
+
+  
 
 .body-positivity {
     font-size: 16px;
@@ -315,7 +340,7 @@ h2 {
     box-shadow: 1px 1px 10px 4px var(--green);
 }
 
-/* Responsive Design */
+/* Responsive Design */ 
 @media (max-width: 768px) {
     .intro-img, .intro-text {
         max-width: 100%;
@@ -719,38 +744,6 @@ footer p {
     margin: 5px 0;
 }
 
-.counter-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.counter-box {
-    text-align: center;
-    background-color: #f0f8ff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.counter-box h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.counter {
-    font-size: 2.5rem;
-    color: #28a745; /* Green color for happy clients */
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-}
-
-#calories-counter {
-    color: #ff6347; /* Red color for calories */
-}
 /* Footer Styling */
 .site-footer {
     background-color: #333;
@@ -886,15 +879,43 @@ footer p {
 
     .social-icons {
         justify-content: center;
+        flex-wrap: wrap; /* Ensures social icons don't overflow */
+    }
+
+    /* Make columns stack vertically on small screens */
+    .footer_inner_wrapper .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust column padding and width for smaller screens */
+    .footer_inner_wrapper .col-xs-12, 
+    .footer_inner_wrapper .col-sm-4 {
+        flex-basis: 100%;
+        padding: 15px 10px;
+        max-width: 100%; /* Ensures columns fit within screen width */
     }
 }
-.footer_inner_wrapper .row {
-    display: flex;
-    justify-content: space-between;
-}
 
-.footer_inner_wrapper .col-xs-12, 
-.footer_inner_wrapper .col-sm-4 {
-    flex: 1;
-    padding: 15px;
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .footerlogo img {
+        max-width: 150px; /* Reduce logo size on smaller screens */
+    }
+
+    .social-icons li a {
+        font-size: 20px; /* Adjust icon size for small screens */
+    }
+
+    .site-footer h3.widget-title {
+        font-size: 1.25rem; /* Reduce font size for titles */
+    }
+
+    .footer-whatsapp a {
+        font-size: 16px;
+    }
+
+    .footer-timing {
+        font-size: 14px;
+    }
 }

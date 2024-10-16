@@ -20,42 +20,46 @@ initMDB({ collapse });
     },
   });
 
-  // Counter for "Satisfied Happy Clients"
-function countUp(target, elementId, duration) {
-  const element = document.getElementById(elementId);
-  let count = 0;
-  const increment = target / (duration / 100);
-
-  const counterInterval = setInterval(() => {
-      count += increment;
-      if (count >= target) {
-          clearInterval(counterInterval);
-          count = target;
-      }
-      element.textContent = Math.floor(count);
-  }, 100);
-}
-
-// Counter for "Calories Decreased"
-function countDown(start, end, elementId, duration) {
-  const element = document.getElementById(elementId);
-  let count = start;
-  const decrement = (start - end) / (duration / 100);
-
-  const counterInterval = setInterval(() => {
-      count -= decrement;
-      if (count <= end) {
-          clearInterval(counterInterval);
-          count = end;
-      }
-      element.textContent = Math.floor(count);
-  }, 100);
-}
-
-// Start the counters when the page loads
-window.onload = function() {
-  countUp(3000, 'clients-counter', 3000); // Counts up to 3000
-  countDown(2500, 300, 'calories-counter', 3000); // Counts down to 300
-};
-
-
+  // counter
+  const counters = document.querySelectorAll('.counter');
+  const speed = 100; // Speed of the counting
+  
+  // Function to animate the counting
+  const animateCounter = (counter) => {
+      const target = +counter.getAttribute('data-target'); // Get the target value
+      const increment = target / speed; // Calculate the increment step
+      let currentValue = 0;
+      
+      const updateCounter = () => {
+          currentValue += increment;
+          if (currentValue < target) {
+              counter.textContent = Math.ceil(currentValue);
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.textContent = target;
+          }
+      };
+      
+      updateCounter();
+  };
+  
+  // Intersection Observer to start counting when in view
+  const observerOptions = {
+      threshold: 0.2 // When 20% of the counter is in view
+  };
+  
+  const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              animateCounter(entry.target); // Start counting
+              observer.unobserve(entry.target); // Stop observing once animation starts
+          }
+      });
+  };
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  // Observe each counter
+  counters.forEach(counter => {
+      observer.observe(counter);
+  });

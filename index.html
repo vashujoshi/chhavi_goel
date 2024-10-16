@@ -7,6 +7,7 @@
     
     <!-- Preload the logo image to improve LCP -->
     <!-- <link rel="preload" href="icons/logo1.png" as="image"> -->
+    <link rel="stylesheet" href="counter.css">  
     <section class="header-section">
         <!-- Logo and Social Media Section -->
         <div class="logo-and-social">
@@ -100,13 +101,7 @@
                 </div>
             </section>
         </div>
-    </nav>
-
-
-    <!-- social media buttons -->
-
-
-    
+    </nav>    
 <!-- Main Content -->
 <div class="container introduction">
     <img src="chavi.jpg" alt="Introduction Image" class="intro-img" loading="lazy" />
@@ -181,32 +176,42 @@
 </section> -->
 
 
-<!-- Image Slider Section -->
-<!-- <section id="image-slider">
-    <div class="slider-container">
-      <div class="slider">
-        <div class="slide active" style="background-image: url('printmedia/1.jpg');"></div>
-        <div class="slide " style="background-image: url('printmedia/2.jpg');"></div>
-        <div class="slide" style="background-image: url('../assets/image/Slider/p3.jpg');"></div>
-        <div class="slide" style="background-image: url('../assets/image/Slider/p4.jpg');"></div>
-        <div class="slide" style="background-image: url('../assets/image/Slider/p5.jpg');"></div>
-      </div> 
-      <div class="left-arrow" onclick="moveSlide(-1)">&#10094;</div>
-      <div class="right-arrow" onclick="moveSlide(1)">&#10095;</div>
+   
+<div class="counter-widget">
+    <div class="counter-item" style="--clr: #FF6F61;">
+        <span class="icon">❤️</span>
+        <h3>Clients</h3>
+        <span class="counter" data-target="8600">0</span>
+        <p>Satisfied Clients by Results</p>
     </div>
-    <div class="dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
+    <div class="counter-item" style="--clr: #6BAED6;">
+        <span class="icon">⏰</span>
+        <h3>Seminar-Hours</h3>
+        <span class="counter" data-target="500">0</span>
+        <p>Hours of seminars on healthy diets</p>
     </div>
-  </section>
-   -->
-
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-6d443dd6-d7cd-43ce-8037-074ce4676445" data-elfsight-app-lazy></div>
-
+    <div class="counter-item" style="--clr: #7DCEA0;">
+        <span class="icon">📖</span>
+        <h3>Recipes</h3>
+        <span class="counter" data-target="200">0</span>
+        <p>Recipes published</p>
+    </div>
+    <div class="counter-item" style="--clr: #F4D03F;">
+        <span class="icon">😄</span>
+        <h3>Satisfaction</h3>
+        <span class="counter" data-target="98">0</span>
+        <p>Client Satisfaction Rate</p>
+    </div>
+    <div class="counter-item" style="--clr: #F39C12;">
+        <span class="icon">⭐</span>
+        <h3>Top Dietitian</h3>
+        <span class="counter" data-target="4.8"">0</span>
+        <p>One of the highest-rated dietitians</p>
+    </div>
+</div>
+<script>
+  
+    </script>
 <footer id="colophon" class="site-footer">
     <div class="footer_inner_wrapper footer tm-bg tm-bgcolor-transparent tm-bgimage-no">
         <div class="site-footer-bg-layer tm-bg-layer"></div>
@@ -316,30 +321,55 @@
     </div>
 </footer>
 
-
-
-<!-- <footer>
-    <div class="footer-container">
-        <div class="footer-links">
-            <ul>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="achievements.html">Achievements</a></li>
-                <li><a href="membership.html">Pricing</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="testimonial.html">Testimonial</a></li>
-            </ul>
-        </div>
-        <div class="footer-copyright">
-            <p>&copy; 2024 dietitianchhavigoel.com All Rights Reserved.</p>
-        </div>
-    </div>
-</footer> -->
-
 <!-- Lazy loading of scripts -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-<script defer src="scripts.js"></script>
+<script src="script.js"></script>
 
+<script>
+      const counters = document.querySelectorAll('.counter');
+const speed = 100; // Speed of the counting
+
+// Function to animate the counting
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target'); // Get the target value
+    const increment = target / speed; // Calculate the increment step
+    let currentValue = 0;
+    
+    const updateCounter = () => {
+        currentValue += increment;
+        if (currentValue < target) {
+            counter.textContent = Math.ceil(currentValue);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target;
+        }
+    };
+    
+    updateCounter();
+};
+
+// Intersection Observer to start counting when in view
+const observerOptions = {
+    threshold: 0.2 // When 20% of the counter is in view
+};
+
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target); // Start counting
+            observer.unobserve(entry.target); // Stop observing once animation starts
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// Observe each counter
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+    </script>
 </body>
 </html>

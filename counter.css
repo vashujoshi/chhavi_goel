@@ -1,0 +1,87 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling */
+/* body {
+    background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+} */
+
+/* Counter Widget Styling */
+.counter-widget {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
+.counter-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 260px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    border-top: 4px solid var(--clr);
+}
+
+.counter-item:hover {
+    transform: translateY(-10px);
+}
+
+.counter-item h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.counter-item p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.counter {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--clr);
+    margin: 10px 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon {
+    font-size: 3rem;
+    color: var(--clr);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .counter-widget {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .counter-item {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+    }
+}
