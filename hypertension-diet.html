@@ -3,133 +3,150 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hypertension Diet</title>
+    <meta name="description" content="Hypertension Diet and Management Service. Learn how to control high blood pressure with our personalized and holistic approach." />
+    <meta name="keywords" content="Hypertension, Blood Pressure, Diet, Management, Wellness, Cardiovascular Health, Stress Reduction, Nutrition, Lifestyle Modification" />
+    <meta name="author" content="Revive Wellness" />
+    <title>Hypertension Diet and Management</title>
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Add any additional CSS here -->
+    <!-- Responsive and SEO Optimized Styles -->
     <style>
-        /* Style for the background image section */
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive Background Section */
         .background-section {
             background-image: url(icons/Blood-pressure-and-the-heart.webp);
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 200px 20px;
+            padding: 150px 20px;
             color: white;
             text-align: center;
         }
 
-        /* Style for the overlay text on the background */
         .background-section h1 {
-            font-size: 48px;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .background-section p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        /* Image section */
+        /* Content Section */
+        .content-section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .content-section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Image Section */
         .image-section {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .image-section img {
             width: 100%;
             max-width: 800px;
             height: auto;
+            border-radius: 8px;
         }
 
-        /* General text styling */
-        .content-section {
+        /* Sign-Up Box */
+        .signup-box {
+            background-color: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .content-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
             text-align: center;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .content-section ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        .content-section ul li {
+        .signup-box h3 {
+            font-size: 1.5em;
+            color: #333;
             margin-bottom: 10px;
         }
 
-        .content-section .why-choose-us {
-            margin-top: 40px;
-        }
-             /* General text styling */
-             .content-section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .content-section h2 {
-            font-size: 36px;
+        .signup-box p {
+            font-size: 1em;
+            color: #555;
             margin-bottom: 20px;
-            text-align: center;
         }
 
-        .content-section ul {
-            list-style: disc;
-            padding-left: 20px;
+        .signup-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .content-section ul li {
-            margin-bottom: 10px;
+        .signup-btn:hover {
+            background-color: #0056b3;
         }
 
-        .content-section .why-choose-us {
-            margin-top: 40px;
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .background-section {
+                padding: 100px 20px;
+            }
+
+            .background-section h1 {
+                font-size: 2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .signup-box {
+                padding: 15px;
+            }
         }
-                    /* Style for the sign-up box */
-.signup-box {
-    background-color: #f9f9f9;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.signup-box h3 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-}
+        @media (max-width: 576px) {
+            .background-section h1 {
+                font-size: 1.5rem;
+            }
 
-.signup-box p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
-}
+            .background-section p {
+                font-size: 0.9rem;
+            }
 
-.signup-btn {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.signup-btn:hover {
-    background-color: #0056b3;
-}
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -170,12 +187,13 @@
     <div class="image-section">
         <img src="icons/doctorbp.jpeg" alt="Doctor consulting patient about hypertension">
     </div>
-<!-- Sign-Up Box for Diabetes -->
-<div class="signup-box">
-    <h3>Control Your Diabetes with Confidence!</h3>
-    <p>Take control of your diabetes with our comprehensive management program. Sign up now for personalized support and resources designed to help you live your best life.</p>
-    <a href="membership.html" class="signup-btn">Get Started</a>
-</div>
+
+    <!-- Sign-Up Box for Hypertension -->
+    <div class="signup-box">
+        <h3>Control Your Blood Pressure with Confidence!</h3>
+        <p>Take control of your hypertension with our comprehensive management program. Sign up now for personalized support and resources designed to help you live your best life.</p>
+        <a href="membership.html" class="signup-btn">Get Started</a>
+    </div>
 
     <!-- Scripts -->
     <script src="scripts.js"></script>
