@@ -298,7 +298,11 @@ body {
 h2 {
     margin-top: 0;
 }
-
+@media (max-width: 768px) {
+    .blog-card {
+        width: 100%; /* Full width for mobile screens */
+    }
+}
 
 
 /* Introduction Section */
