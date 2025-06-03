@@ -83,8 +83,12 @@ body {
 }
 
 .logo-section {
-    display: flex;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  background: transparent;
 }
 
 .logo-image {
@@ -946,4 +950,43 @@ footer p {
     .footer-timing {
         font-size: 14px;
     }
+}
+
+/* //changes recent*/
+.text-overlay {
+  max-width: 800px;
+}
+
+.text-overlay h1 {
+  font-size: 4rem;
+  margin: 0 0 8px 0;
+}
+
+.text-overlay p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .logo-section {
+    padding: 12px 0;
+  }
+  .logo-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .text-overlay {
+    max-width: 100%;
+  }
+  .text-overlay h1 {
+    font-size: 1.2rem;
+  }
+  .text-overlay p {
+    font-size: 0.95rem;
+  }
+  .logo-content .navbar-brand {
+    min-width: 400px;
+    min-height: 400px;
+  }
 }
